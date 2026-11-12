@@ -363,7 +363,7 @@ def cmd_forget(args: list) -> int:
 	g_mem.clear()
 	g_needs_info = compute_needs_info(g_mem)
 	g_messages = [{"role": "system", "content": current_prompt()}]
-	ui.system("memory cleared — onboarding: " + ("on" if g_needs_info else "off"))
+	ui.system("memory cleared - onboarding: " + ("on" if g_needs_info else "off"))
 	return 0
 
 

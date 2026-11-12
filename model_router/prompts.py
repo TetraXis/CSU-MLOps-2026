@@ -40,12 +40,12 @@ def build_system_prompt(facts_context: str = "", needs_info: bool = False, known
 
 	if needs_info:
 		lines.append("You are meeting this user for the first time.")
-		lines.append("Topics of interest — status shown next to each:")
+		lines.append("Topics of interest - status shown next to each:")
 		for topic in SURVEY_TOPICS:
 			if _topic_known(topic, known):
-				lines.append("- " + topic + "  [ALREADY KNOWN — do NOT ask]")
+				lines.append("- " + topic + "  [ALREADY KNOWN - do NOT ask]")
 			else:
-				lines.append("- " + topic + "  [UNKNOWN — ask this]")
+				lines.append("- " + topic + "  [UNKNOWN - ask this]")
 		lines.append("")
 		lines.append("Ask only about topics marked UNKNOWN, ONE at a time.")
 		lines.append("Never re-ask a topic marked ALREADY KNOWN.")
@@ -77,7 +77,7 @@ def build_system_prompt(facts_context: str = "", needs_info: bool = False, known
 	lines.append("1. Emit at most one tool call per reply.")
 	lines.append("2. The tag must be COMPLETE: it starts with <tool> and ends with </tool>.")
 	lines.append("3. After a tool call, stop and wait for TOOL_RESULT. Do not answer yet.")
-	lines.append("4. Never invent tool names. If a tool isn't listed above, do not call it — just answer in text.")
+	lines.append("4. Never invent tool names. If a tool isn't listed above, do not call it - just answer in text.")
 	lines.append("5. Numbers in args must be JSON numbers, not quoted strings.")
 	lines.append("6. If no tool is needed (e.g. the user asks you to remember something, or asks a general question), answer in plain natural language. Do not write 'no tool' or any tag.")
 	lines.append("7. Never claim data is unavailable. Always call the tool; the tool will report errors.")
